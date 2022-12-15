@@ -10,11 +10,33 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class Day02Test {
 
     private FileReader fileReader = new FileReader("day02");
-    private Day02 day02 = new Day02();
 
     @Test
-    void example(){
+    void example1(){
 
+        Day02 day02 = new Day02(new Test1RoundParser());
+        List<String> input = fileReader.readFile("example.txt");
+
+        int result = day02.computeScore(input);
+
+        assertThat(result).isEqualTo(15);
+    }
+
+    @Test
+    void test1(){
+
+        Day02 day02 = new Day02(new Test1RoundParser());
+        List<String> input = fileReader.readFile("input1.txt");
+
+        int result = day02.computeScore(input);
+
+        assertThat(result).isEqualTo(11841);
+    }
+
+    @Test
+    void example2(){
+
+        Day02 day02 = new Day02(new Test2RoundParser());
         List<String> input = fileReader.readFile("example.txt");
 
         int result = day02.computeScore(input);
@@ -23,8 +45,9 @@ public class Day02Test {
     }
 
     @Test
-    void test1(){
+    void test2(){
 
+        Day02 day02 = new Day02(new Test2RoundParser());
         List<String> input = fileReader.readFile("input1.txt");
 
         int result = day02.computeScore(input);
