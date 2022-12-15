@@ -9,12 +9,15 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class Day01Test {
 
+    private Day01 day01 = new Day01(new ElvesParser());;
+    private FileReader fileReader = new FileReader("day01");;
+
     @Test
     void sample(){
 
-        List<String> input = new FileReader("day01").readFile("example.txt");
+        List<String> input = fileReader.readFile("example.txt");
 
-        long result = new Day01(new ElvesParser()).maxCarriedCalories(input);
+        long result = day01.maxCarriedCalories(input);
 
         assertThat(result).isEqualTo(24000l);
     }
@@ -22,10 +25,30 @@ public class Day01Test {
     @Test
     void test1(){
 
-        List<String> input = new FileReader("day01").readFile("test1.txt");
+        List<String> input = fileReader.readFile("test1.txt");
 
-        long result = new Day01(new ElvesParser()).maxCarriedCalories(input);
+        long result = day01.maxCarriedCalories(input);
 
         assertThat(result).isEqualTo(73211L);
+    }
+
+    @Test
+    void sample_test2(){
+
+        List<String> input = fileReader.readFile("example.txt");
+
+        long result = day01.maxCarriedCalories(3, input);
+
+        assertThat(result).isEqualTo(45000l);
+    }
+
+    @Test
+    void test2(){
+
+        List<String> input = fileReader.readFile("test1.txt");
+
+        long result = day01.maxCarriedCalories(3, input);
+
+        assertThat(result).isEqualTo(213958L);
     }
 }

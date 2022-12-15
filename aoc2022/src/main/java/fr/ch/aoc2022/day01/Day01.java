@@ -1,5 +1,6 @@
 package fr.ch.aoc2022.day01;
 
+import java.util.Comparator;
 import java.util.List;
 
 public class Day01 {
@@ -11,9 +12,16 @@ public class Day01 {
     }
 
     public long maxCarriedCalories(List<String> input) {
+        return maxCarriedCalories(1, input);
+    }
+
+    public long maxCarriedCalories(int nbOfElves, List<String> input) {
         return elvesParser.parse(input).stream()
                 .mapToLong(Elf::getCaloriesCarried)
-                .max()
-                .orElse(0l);
+                .boxed()
+                .sorted(Comparator.comparingLong(Long::longValue).reversed())
+                .limit(nbOfElves)
+                .mapToLong(Long::longValue)
+                .sum();
     }
 }
