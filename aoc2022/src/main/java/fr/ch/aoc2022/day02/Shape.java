@@ -9,10 +9,10 @@ public enum Shape {
 
     private static final Map<String, Shape> codification = new HashMap<>() {{
         put("A", ROCK);
-        put("X", ROCK);
         put("B", PAPER);
-        put("Y", PAPER);
         put("C", SCISSORS);
+        put("X", ROCK);
+        put("Y", PAPER);
         put("Z", SCISSORS);
     }};
     private final int innerScore;

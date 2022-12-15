@@ -19,7 +19,7 @@ public class Day02Test {
 
         int result = day02.computeScore(input);
 
-        assertThat(result).isEqualTo(15);
+        assertThat(result).isEqualTo(12);
     }
 
     @Test
@@ -29,6 +29,6 @@ public class Day02Test {
 
         int result = day02.computeScore(input);
 
-        assertThat(result).isEqualTo(11841);
+        assertThat(result).isEqualTo(13022);
     }
 }
