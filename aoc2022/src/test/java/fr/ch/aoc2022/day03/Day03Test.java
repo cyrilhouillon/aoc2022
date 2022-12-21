@@ -33,4 +33,25 @@ public class Day03Test {
 
         assertThat(result).isEqualTo(8018);
     }
+
+    @Test
+    void sample2(){
+
+        List<String> input = fileReader.readFile("example.txt");
+
+        int result = day03.sumOfBadgesPriorities(input);
+
+        assertThat(result).isEqualTo(70);
+    }
+
+    @Test
+    void test2(){
+
+        List<String> input = fileReader.readFile("input.txt");
+
+        int result = day03.sumOfBadgesPriorities(input);
+
+        assertThat(result).isEqualTo(2518);
+    }
+
 }

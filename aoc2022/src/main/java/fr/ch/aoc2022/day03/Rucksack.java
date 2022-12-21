@@ -16,9 +16,22 @@ public class Rucksack {
         }
     }
 
+    private Set<Character> getAllContent(){
+        HashSet<Character> characters = new HashSet<>();
+        characters.addAll(compartment1);
+        characters.addAll(compartment2);
+        return characters;
+    }
     public Character getItemInBothCompartments() {
         HashSet<Character> charactersInCommon = new HashSet<>(compartment1);
         charactersInCommon.retainAll(compartment2);
+        return charactersInCommon.stream().findAny().get();
+    }
+
+    public static Character findBadge(Rucksack r1, Rucksack r2, Rucksack r3) {
+        Set<Character> charactersInCommon = r1.getAllContent();
+        charactersInCommon.retainAll(r2.getAllContent());
+        charactersInCommon.retainAll(r3.getAllContent());
         return charactersInCommon.stream().findAny().get();
     }
 
