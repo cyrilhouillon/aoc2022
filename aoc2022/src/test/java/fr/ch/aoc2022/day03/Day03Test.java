@@ -1,7 +1,5 @@
 package fr.ch.aoc2022.day03;
 
-import fr.ch.aoc2022.day01.Day01;
-import fr.ch.aoc2022.day01.ElvesParser;
 import fr.ch.aoc2022.util.FileReader;
 import org.junit.jupiter.api.Test;
 
@@ -27,7 +25,7 @@ public class Day03Test {
     @Test
     void test1(){
 
-        List<String> input = fileReader.readFile("input.txt");
+        List<String> input = fileReader.readFile("input.txt.txt");
 
         int result = day03.sumOfPriorities(input);
 
@@ -47,7 +45,7 @@ public class Day03Test {
     @Test
     void test2(){
 
-        List<String> input = fileReader.readFile("input.txt");
+        List<String> input = fileReader.readFile("input.txt.txt");
 
         int result = day03.sumOfBadgesPriorities(input);
 
